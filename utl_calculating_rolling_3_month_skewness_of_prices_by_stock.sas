@@ -84,7 +84,7 @@ WORKING CODE
        by stock ;
        if first.stock then obs=1;
        array ts{0:2} _temporary_;   * ring array shift left;
-       ts{mod(obs-1,3)}=open;       * mod allows only indexes 0,1,2;
+       ts{mod(obs,3)}=open;       * mod allows only indexes 0,1,2;
        if obs>=3 then do;
            tot=skewness(of ts{*});  * tyoe 2 skewness;
        end;
